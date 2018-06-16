@@ -7,7 +7,7 @@ from pymorphy2 import MorphAnalyzer
 import re
 import urllib.request
 
-urllib.request.urlretrieve("http://rusvectores.org/static/models/rusvectores2/ruscorpora_mystem_cbow_300_2_2015.bin.gz", "ruscorpora_mystem_cbow_300_2_2015.bin.gz")
+urllib.request.urlretrieve("http://rusvectores.org/static/models/rusvectores2/web_mystem_skipgram_500_2_2015.bin.gz", "web_mystem_skipgram_500_2_2015.bin.gz")
 
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
 
@@ -16,7 +16,7 @@ app = Flask(__name__)
 m = Mystem()
 morph = MorphAnalyzer()
 
-mo = 'ruscorpora_mystem_cbow_300_2_2015.bin.gz'
+mo = 'web_mystem_skipgram_500_2_2015.bin.gz'
 model = gensim.models.KeyedVectors.load_word2vec_format(mo, binary=True)
 model.init_sims(replace=True)
 
