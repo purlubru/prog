@@ -5,6 +5,9 @@ import gensim, logging
 from pymystem3 import Mystem
 from pymorphy2 import MorphAnalyzer
 import re
+import urllib.request
+
+urllib.request.urlretrieve("http://rusvectores.org/static/models/rusvectores2/ruscorpora_mystem_cbow_300_2_2015.bin.gz", "ruscorpora_mystem_cbow_300_2_2015.bin.gz")
 
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
 
